@@ -14,6 +14,10 @@ const orderSchema = mongoose.Schema({
         type: Number,
         default: 0.0
     },
+    quantity:{
+        type:Number,
+        default:1
+    },
     photo: String,
     dateCreated: {
         type: Date,
