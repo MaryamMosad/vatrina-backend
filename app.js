@@ -3,6 +3,8 @@ const morgan = require('morgan');
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
 const categoryRouter = require('./routes/categoryRoutes');
+const orderRouter = require('./routes/orderRoutes');
+
 const appError = require('./Utils/appError');
 const globalErrorHandler = require('./controllers/errorController')
 
@@ -17,6 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/categories', categoryRouter);
+app.use('/api/v1/orders', orderRouter);
 
 
 app.all('*', (req, res, next) => {
